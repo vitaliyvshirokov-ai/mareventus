@@ -1,0 +1,1 @@
+<!DOCTYPE html><html lang="en"><body style="font-family:Arial,sans-serif;color:#0B3D66"><h1>Thank you for contacting Mare Ventus Logistics</h1><p>Dear {{ $contact->name }},</p><p>Thank you for contacting Mare Ventus Logistics. Our team will get back to you shortly.</p><p>Kind regards,<br>Mare Ventus Logistics FZCO<br>Dubai, United Arab Emirates</p></body></html>
