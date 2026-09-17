@@ -1,0 +1,37 @@
+name: Deploy Mare Ventus
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    name: Deploy to production server
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Deploy over SSH
+        env:
+          SERVER_HOST: ${{ secrets.SERVER_HOST }}
+          SERVER_USER: ${{ secrets.SERVER_USER }}
+          SERVER_PATH: ${{ secrets.SERVER_PATH }}
+          SERVER_SSH_KEY: ${{ secrets.SERVER_SSH_KEY }}
+        run: |
+          install -m 700 -d "$HOME/.ssh"
+          printf '%s\n' "$SERVER_SSH_KEY" > "$HOME/.ssh/mareventus_github_actions"
+          chmod 600 "$HOME/.ssh/mareventus_github_actions"
+          ssh-keyscan -H "$SERVER_HOST" >> "$HOME/.ssh/known_hosts"
+
+          ssh -o IdentitiesOnly=yes \
+            -o StrictHostKeyChecking=yes \
+            -i "$HOME/.ssh/mareventus_github_actions" \
+            "$SERVER_USER@$SERVER_HOST" \
+            "cd '$SERVER_PATH' && \
+             git pull --ff-only origin main && \
+             mkdir -p bootstrap/cache storage/framework/cache storage/framework/sessions storage/framework/views storage/logs && \
+             COMPOSER_NO_SECURITY_BLOCKING=1 composer install --no-dev --prefer-dist --optimize-autoloader && \
+             npm ci && \
+             npm run build && \
+             php artisan migrate --force && \
+             php artisan optimize"
