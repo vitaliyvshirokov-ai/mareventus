@@ -1,0 +1,45 @@
+[OK] Зеленая точка означает, что GitHub Actions завершился успешно.
+
+CI/CD теперь работает:
+
+1. Ты меняешь файлы локально.
+2. Выполняешь:
+
+```powershell
+git add .
+git commit -m "Update website"
+git push origin main
+``
+
+3. GitHub автоматически подключается к серверу.
+4. Выполняются:
+
+```text
+git pull
+composer install
+npm ci
+npm run build
+php artisan migrate
+php artisan optimize
+``
+
+5. Сайт обновляется автоматически.
+
+Можешь открыть сайт и проверить последнюю версию.
+
+_________________________________________________
+
+[OK] CI/CD успешно завершён.
+
+Ошибка с SSH-ключом устранена благодаря поддержке существующего секрета `SERVER_SH_KEY_B64`.
+
+Теперь при следующих измениях достаточно:
+
+```powershell
+cd "C:\Users\klio8\OneDrive\Рабочий стол\mareventus.ae"
+git add .
+git commit -m "Update website"
+git push origin main
+``
+
+После `git push` сайт будет обновляться автоматически через GitHub Actions.
