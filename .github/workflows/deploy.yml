@@ -19,7 +19,7 @@ jobs:
           SERVER_SSH_KEY: ${{ secrets.SERVER_SSH_KEY }}
         run: |
           install -m 700 -d "$HOME/.ssh"
-          printf '%s\n' "$SERVER_SSH_KEY" > "$HOME/.ssh/mareventus_github_actions"
+          printf '%s' "$SERVER_SSH_KEY" | tr -d '\r' > "$HOME/.ssh/mareventus_github_actions"
           chmod 600 "$HOME/.ssh/mareventus_github_actions"
           ssh-keyscan -H "$SERVER_HOST" >> "$HOME/.ssh/known_hosts"
 
