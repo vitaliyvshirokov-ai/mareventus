@@ -6,6 +6,7 @@
     <meta name="description" content="Dubai-based maritime logistics, vessel chartering and bulk vegetable oil transportation across Europe, Africa, the Red Sea, Persian Gulf and Caspian Sea.">
     <meta name="robots" content="index,follow,max-image-preview:large">
     <meta name="author" content="Mare Ventus Logistics FZCO">
+    <meta name="yandex-verification" content="c080213a844d65ce">
     <meta name="theme-color" content="#0B3D66">
     <link rel="canonical" href="{{ url('/') }}">
     <link rel="alternate" hreflang="en" href="{{ url('/') }}">
