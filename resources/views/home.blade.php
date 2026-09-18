@@ -2,10 +2,16 @@
 <html lang="en" class="scroll-smooth">
 <head>
     <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>Mare Ventus Logistics FZCO | Maritime Cargo Transportation</title>
-    <meta name="description" content="Dubai-based sea freight, chartering and vegetable oil transportation across Europe, Africa, the Red Sea, the Persian Gulf and the Caspian Sea.">
-    <meta name="keywords" content="sea freight, ocean cargo, vegetable oil transportation, logistics UAE, Dubai shipping company">
-    <meta property="og:title" content="Mare Ventus Logistics FZCO"><meta property="og:description" content="Reliable ocean and river cargo transportation from Dubai."><meta property="og:image" content="{{ asset('og-image.svg') }}"><meta property="og:type" content="website">
+    <title>Maritime Logistics & Vessel Chartering in Dubai | Mare Ventus</title>
+    <meta name="description" content="Dubai-based maritime logistics, vessel chartering and bulk vegetable oil transportation across Europe, Africa, the Red Sea, Persian Gulf and Caspian Sea.">
+    <meta name="robots" content="index,follow,max-image-preview:large">
+    <meta name="author" content="Mare Ventus Logistics FZCO">
+    <meta name="theme-color" content="#0B3D66">
+    <link rel="canonical" href="{{ url('/') }}">
+    <link rel="alternate" hreflang="en" href="{{ url('/') }}">
+    <meta property="og:locale" content="en_US"><meta property="og:site_name" content="Mare Ventus Logistics FZCO"><meta property="og:title" content="Mare Ventus Logistics FZCO | Maritime Logistics & Chartering"><meta property="og:description" content="Reliable maritime logistics, vessel chartering and bulk vegetable oil transportation from Dubai."><meta property="og:url" content="{{ url('/') }}"><meta property="og:image" content="{{ asset('og-image.svg') }}"><meta property="og:image:alt" content="Mare Ventus Logistics maritime cargo transportation"><meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Mare Ventus Logistics FZCO | Maritime Logistics & Chartering"><meta name="twitter:description" content="Reliable maritime logistics, vessel chartering and bulk vegetable oil transportation from Dubai."><meta name="twitter:image" content="{{ asset('og-image.svg') }}">
+    <script type="application/ld+json">{!! json_encode(['@context'=>'https://schema.org','@type'=>'LocalBusiness','additionalType'=>'https://schema.org/TransportationBusiness','name'=>'Mare Ventus Logistics FZCO','url'=>url('/'),'logo'=>asset('logo-mark.svg'),'description'=>'Maritime logistics, vessel chartering and bulk vegetable oil transportation from Dubai.','email'=>$settings['email'] ?? 'management@mareventuslog.com','telephone'=>$settings['phone'] ?? '+971 4 228 52 85','address'=>['@type'=>'PostalAddress','streetAddress'=>'Dubai Silicon Oasis, DDP (Dubai Digital Park), Building A3, Office 201A','addressLocality'=>'Dubai','addressCountry'=>'AE'],'areaServed'=>['Europe','Africa','Red Sea','Persian Gulf','Caspian Sea'],'sameAs'=>array_values(array_filter([$settings['linkedin_url'] ?? null], fn ($url) => $url && $url !== '#'))], JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE) !!}</script>
     <link rel="icon" href="{{ asset('favicon.svg') }}" type="image/svg+xml"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     @vite(['resources/css/app.css','resources/js/app.js'])
 </head>
