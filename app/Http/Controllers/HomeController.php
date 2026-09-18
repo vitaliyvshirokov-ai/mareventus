@@ -12,11 +12,15 @@ class HomeController extends Controller
 {
     public function __invoke(): View
     {
+        $services = Service::query()->orderBy('sort_order')->get()->unique('title')->values();
+        $fleet = FleetImage::query()->orderBy('sort_order')->get()->unique('path')->values();
+        $partners = Partner::query()->orderBy('sort_order')->get()->unique('name')->values();
+
         return view('home', [
             'settings' => Setting::values(),
-            'services' => Service::query()->orderBy('sort_order')->get(),
-            'fleet' => FleetImage::query()->orderBy('sort_order')->get(),
-            'partners' => Partner::query()->orderBy('sort_order')->get(),
+            'services' => $services,
+            'fleet' => $fleet,
+            'partners' => $partners,
         ]);
     }
 }

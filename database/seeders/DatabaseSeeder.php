@@ -38,7 +38,7 @@ class DatabaseSeeder extends Seeder
             'address' => 'Dubai Silicon Oasis, DDP (Dubai Digital Park), Building A3, Office 201A, Dubai, United Arab Emirates',
             'email' => 'management@mareventuslog.com',
             'phone' => '+971 4 228 52 85',
-            'map_link' => 'https://www.google.com/maps?q=Dubai+Silicon+Oasis+Dubai+Digital+Park&output=embed',
+            'map_link' => 'https://www.google.com/maps?q=Dubai+Silicon+Oasis+Dubai+Digital+Park&hl=en&output=embed',
             'linkedin_url' => '#',
         ];
         foreach ($settings as $key => $value) Setting::query()->updateOrCreate(['key' => $key], ['value' => $value]);
